@@ -1,14 +1,7 @@
-# Create the logging_decorator() function 👇
-
-def logging_decorator(function):
-    def wrapper(*args):
-        print(f"you called {function.__name__}{args}")
-        total=function(args[0],args[1],args[2])
-        print(f"it gave {total}")
-    return wrapper
+import requests
 
 
-# Use the decorator 👇
-
-def decorator(a,b,c):
-
+request = requests.get("https://api.npoint.io/ed99320662742443cc5b")
+request.raise_for_status
+data_2 = request.json()
+print( data_2[0]['title'])
